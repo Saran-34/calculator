@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body> 
+   <div class="con"> <center><h1>calculator</h1></center>
+ 
+    <div class="cal">
+        
+        <input type="text" id="op">
+        <div class="row">
+            <button class="cl" onclick="cl()">AC</button>
+            <button class="cl" onclick="del()">CL</button>
+            <button class="cl" onclick="display('%')">%</button>
+            <button class="cl" onclick="display('/')">/</button>
+        </div>
+        <div class="row">
+            <button onclick="display('7')">7</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('9')">9</button>
+            <button class="cl" onclick="display('*')">*</button>
+        </div>
+        <div class="row">
+            <button onclick="display('4')">4</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('6')">6</button>
+            <button class="cl"onclick="display('-')">-</button>
+        </div>
+        <div class="row">
+            <button onclick="display('1')">1</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('3')">3</button>
+            <button class="cl" onclick="display('+')">+</button>
+        </div>
+        <div class="row o">
+            <div class="fi">
+                <button onclick="display('.')">.</button>
+                <button onclick="display('0')">0</button>
+            </div>
+            <div class="sec">
+                <button class="cl" onclick="ans()">=</button>
+            </div> 
+        </div> 
+    </div>
+   </div>
+   <footer><center>made by saran</center></footer>
+   <script>
+    let opp = document.getElementById("op");
+    function display(num){
+        opp.value += num; 
+    }
+    function cl(){
+        opp.value= "";
+    }
+    function ans(){
+        try{
+            opp.value =eval(op.value);
+        }
+        catch(err){
+            alert("invalid input")
+        } 
+    }
+    function del(){
+        opp.value = opp.value.slice(0,-1)
+    } 
+
+   </script>
+</body>
+</html>
